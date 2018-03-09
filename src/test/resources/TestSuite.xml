@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Automation Suite POC 1" allow-return-values="true" verbose="1">
+
+    <test name="Test : BoshMini1">
+        <parameter name="Port" value="4725"/>
+        <parameter name="UDID" value="192.168.1.2:5555"/>
+        <classes>
+            <class name="com.qualit.mobile.TraceMessangerTest1">
+                <methods>
+                    <include name="testing1"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

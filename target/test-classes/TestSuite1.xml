@@ -1,0 +1,37 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Automation Suite POC 2 Parallel" parallel="tests" thread-count="3">
+
+    <!--  if you need to run the same test in different devices only need to mentioned the class name -->
+
+    <!--BoschTouchOneMini 1 : Serial ID-->
+
+    <test name="Test: BoshMini1">
+        <parameter name="Port" value="4723"/>
+        <parameter name="UDID" value="192.168.1.121:5555"/>
+        <classes>
+            <class name="com.qualit.mobile.TraceMessangerTest1">
+                <methods>
+                    <include name="testing1"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <!--BoschTouchOneMini 2 : Serial ID-->
+
+    <test name="Test: BoshMini2">
+        <parameter name="Port" value="4725"/>
+        <parameter name="UDID" value="192.168.1.2:5555"/>
+        <classes>
+            <class name="com.qualit.mobile.TraceMessangerTest1">
+                <methods>
+                    <include name="testing2"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+
+</suite>
