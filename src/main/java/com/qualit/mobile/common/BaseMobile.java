@@ -6,7 +6,10 @@ import io.appium.java_client.android.AndroidDriver;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.ITestContext;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -50,13 +53,13 @@ public class BaseMobile {
                 capabilities.setCapability("udid", udid);
 
                 list.add(udid);
-                //connectToStfDevice();
+                connectToStfDevice();
 
                 androidDriver = new AndroidDriver(new URL("http://127.0.0.1:" + port + "/wd/hub"), capabilities);
 
             } catch (MalformedURLException e) {
                 e.printStackTrace();
-            //} catch (URISyntaxException e) {
+            } catch (URISyntaxException e) {
                 e.printStackTrace();
             } catch (IOException e) {
                 e.printStackTrace();
@@ -70,7 +73,7 @@ public class BaseMobile {
     @AfterClass
     public void releaseDevice() {
         for (int i = 0; i < list.size(); i++) {
-            //deviceConnectSTF.releaseDevice(list.get(i));
+            deviceConnectSTF.releaseDevice(list.get(i));
         }
     }
 
