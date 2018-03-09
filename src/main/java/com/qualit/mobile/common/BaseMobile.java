@@ -25,7 +25,7 @@ public class BaseMobile {
     private ArrayList<String> list = new ArrayList<>();
     private DeviceConnectSTF deviceConnectSTF;
     private String Stf_URL = "http://192.168.1.204:7100";
-    private String Token = "d6629861d92d453ca9d61e79a083c6a7afc209c704614c4d980c5e239a2f9f32";
+    private String Token = "4bc4d5a6a4744c5ca639e61a51ad02164ec82d73269048b5840730fb834d3ac2";
 
     private void connectToStfDevice() throws IOException, URISyntaxException {
         STFService stfService = new STFService(Stf_URL, Token);
