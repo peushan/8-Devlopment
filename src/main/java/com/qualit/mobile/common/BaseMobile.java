@@ -42,7 +42,7 @@ public class BaseMobile {
         synchronized (this) {
             try {
                 capabilities = new DesiredCapabilities();
-                capabilities.setCapability("app", "/Users/qualit_macbook_akl/Desktop/8_Development/MobilePOC/src/test/resources/MessageTracer-58.apk");
+                capabilities.setCapability("app", "Downloads/MobilePOC/src/test/resources/MessageTracer-58.apk");
                 capabilities.setCapability("app-package", "com.eightdevelopment.touchoneb.messagetracer");
                 capabilities.setCapability("app-activity", "com.eightdevelopment.touchoneb.messagetracer/.MainActivity");
                 capabilities.setCapability("platformName", "Android");
@@ -50,13 +50,13 @@ public class BaseMobile {
                 capabilities.setCapability("udid", udid);
 
                 list.add(udid);
-                connectToStfDevice();
+                //connectToStfDevice();
 
                 androidDriver = new AndroidDriver(new URL("http://127.0.0.1:" + port + "/wd/hub"), capabilities);
 
             } catch (MalformedURLException e) {
                 e.printStackTrace();
-            } catch (URISyntaxException e) {
+            //} catch (URISyntaxException e) {
                 e.printStackTrace();
             } catch (IOException e) {
                 e.printStackTrace();
@@ -70,7 +70,7 @@ public class BaseMobile {
     @AfterClass
     public void releaseDevice() {
         for (int i = 0; i < list.size(); i++) {
-            deviceConnectSTF.releaseDevice(list.get(i));
+            //deviceConnectSTF.releaseDevice(list.get(i));
         }
     }
 
